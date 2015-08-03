@@ -1,3 +1,3 @@
-#CountVisitsBundle
+#ViewCounterBundle
 
-Acilia CountVisits Bundle for Symfony2
+Acilia View Counter Bundle for Symfony2
