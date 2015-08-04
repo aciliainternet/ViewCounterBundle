@@ -1,5 +1,5 @@
 <?php
-namespace Acilia\Bundle\CountVisitsBundle\Command;
+namespace Acilia\Bundle\ViewCounterBundle\Command;
 
 use Symfony\Bundle\FrameworkBundle\Command\ContainerAwareCommand;
 use Symfony\Component\Console\Input\InputArgument;
@@ -7,17 +7,17 @@ use Symfony\Component\Console\Input\InputInterface;
 use Symfony\Component\Console\Input\InputOption;
 use Symfony\Component\Console\Output\OutputInterface;
 
-class ProcessVisitsCommand extends ContainerAwareCommand
+class ProcessViewsCommand extends ContainerAwareCommand
 {
     protected function configure()
     {
-        $this->setName('acilia:process-visits')
-            ->setDescription('Process visits count no realtime');
+        $this->setName('acilia:process-views')
+            ->setDescription('Process views count no realtime');
     }
 
     protected function execute(InputInterface $input, OutputInterface $output)
     {
-        $visitsCounterService = $this->getContainer()->get('acilia.count.visits');
-        $visitsCounterService->processViews();
+        $viewCounterService = $this->getContainer()->get('acilia.view.counter');
+        $viewCounterService->processViews();
     }
 }

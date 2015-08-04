@@ -1,8 +1,8 @@
 parameters:
-    acilia.visits:
+    acilia.view.counter:
         realtime: false
 
 services:
-    acilia.count.visits:
-        class: Acilia\Bundle\CountVisitsBundle\Service\CountVisitsService
-        arguments: [@doctrine, @core.memcached, %acilia.visits%]
+    acilia.view.counter:
+        class: Acilia\Bundle\ViewCounterBundle\Service\ViewCounterService
+        arguments: [@doctrine, @core.memcached, %acilia.view.counter%]

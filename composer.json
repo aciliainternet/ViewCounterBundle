@@ -1,9 +1,9 @@
 {
-    "name": "aciliainternet/countvisits-bundle",
+    "name": "aciliainternet/view-counter-bundle",
     "type": "bundle",
-    "description": "Acilia CountVisits Bundle",
+    "description": "Acilia View Counter Bundle",
     "keywords": ["bundle"],
-    "homepage": "https://github.com/aciliainternet/CountVisitsBundle",
+    "homepage": "https://github.com/aciliainternet/ViewCounterBundle",
     "authors": [
         {
             "name": "Acilia Internet",
@@ -15,7 +15,7 @@
         "symfony/framework-bundle": ">=2.3.0"
     },
     "autoload": {
-        "psr-0": { "Acilia\\Bundle\\CountVisitsBundle": "" }
+        "psr-0": { "Acilia\\Bundle\\ViewCounterBundle": "" }
     },
-    "target-dir": "Acilia/Bundle/CountVisitsBundle"
+    "target-dir": "Acilia/Bundle/ViewCounterBundle"
 }
