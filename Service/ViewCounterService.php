@@ -27,7 +27,9 @@ class ViewCounterService
     {
         if ($this->options['realtime']) {
             $viewsSql = $this->getViewUpdate();
+
             $viewsStmt = str_replace(['%table%', '%field%', '%field_id%'], [$object->getViewCounterModel(), $object->getViewCounterField(), $object->getViewCounterFieldId()], $viewsSql);
+            $viewsStmt = $this->doctrine->getManager()->getConnection()->prepare($viewsStmt);
             $viewsStmt->execute(['views' => 1, 'id' => $object->getViewCounterId()]);
 
         } else {
@@ -58,6 +60,9 @@ class ViewCounterService
                 $viewsStmt->execute(['views' => $value['views'], 'id' => $value['id']]);
             } catch (Exception $e) {}
         }
+
+        // clear processed views
+        $this->memcache->set(self::MEMCACHE_KEY, [], 0);
     }
 
     protected function getViewUpdate()

@@ -1,6 +1,5 @@
 <?php
-
-namespace Acilia\Bundle\ViewCOunterBundle\DependencyInjection;
+namespace Acilia\Bundle\ViewCounterBundle\DependencyInjection;
 
 use Symfony\Component\DependencyInjection\ContainerBuilder;
 use Symfony\Component\Config\FileLocator;
