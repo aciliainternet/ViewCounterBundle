@@ -38,7 +38,7 @@ class ViewCounterService
 
             $entries = $this->memcache->get(self::MEMCACHE_KEY);
             if (!isset ($entries[$key])) {
-                $entries[$key] = ['model' => $object->getViewCounterModel(), 'field' => $object->getViewCounterField(), 'field_id' => $object->getViewCounterFieldId(), 'id' => $object->getViewCounterId(), 'views' => 0];
+                $entries[$key] = ['model' => $object->getViewCounterModel(), 'field' => $object->getViewCounterField(), 'field_id' => $object->getViewCounterFieldId(), 'id' => $object->getViewCounterId(), 'views' => 1];
             } else {
                 $entries[$key]['views'] += 1;
             }
