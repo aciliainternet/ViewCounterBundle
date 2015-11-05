@@ -67,6 +67,6 @@ class ViewCounterService
 
     protected function getViewUpdate()
     {
-        return 'UPDATE %table% SET %field% = %field% + :views WHERE %field_id% = :id';
+        return 'UPDATE %table% SET %field% = COALESCE(%field%, 0) + :views WHERE %field_id% = :id';
     }
 }
