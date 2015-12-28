@@ -5,4 +5,4 @@ parameters:
 services:
     acilia.view.counter:
         class: Acilia\Bundle\ViewCounterBundle\Service\ViewCounterService
-        arguments: [@doctrine, @core.memcached, %acilia.view.counter%]
+        arguments: ["@doctrine", "@core.memcached", %acilia.view.counter%]
