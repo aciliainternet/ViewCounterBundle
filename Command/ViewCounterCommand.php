@@ -17,7 +17,8 @@ class ViewCounterCommand extends ContainerAwareCommand
 
     protected function execute(InputInterface $input, OutputInterface $output)
     {
-        $viewCounterService = $this->getContainer()->get('acilia.view.counter');
-        $viewCounterService->processViews();
+        $this->getContainer()->get('acilia.view.counter')->processViews();
+
+        return 0;
     }
 }
