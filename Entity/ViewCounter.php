@@ -5,7 +5,7 @@ use Doctrine\ORM\Mapping as ORM;
 
 /**
  * @ORM\Entity()
- * @ORM\Table(name="acilia_view_counter", options={"collate"="utf8_unicode_ci", "charset"="utf8", "engine"="InnoDB"})
+ * @ORM\Table(name="acilia_view_counter", options={"collate"="utf8_unicode_ci", "charset"="utf8", "engine"="InnoDB"}, indexes={@ORM\Index(name="idx_acilia_view_counter", columns={"view_model", "view_model_id", "view_date"})})
  */
 class ViewCounter
 {
